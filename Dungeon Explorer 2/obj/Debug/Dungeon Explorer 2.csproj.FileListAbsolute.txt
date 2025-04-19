@@ -1,0 +1,7 @@
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\obj\Debug\Dungeon Explorer 2.csproj.AssemblyReference.cache
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\obj\Debug\Dungeon Explorer 2.csproj.CoreCompileInputs.cache
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\bin\Debug\Dungeon Explorer 2.exe.config
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\bin\Debug\Dungeon Explorer 2.exe
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\bin\Debug\Dungeon Explorer 2.pdb
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\obj\Debug\Dungeon Explorer 2.exe
+C:\Users\hazpa\OneDrive\Documents\GitHub\Dungeon-Explorer-2\Dungeon Explorer 2\obj\Debug\Dungeon Explorer 2.pdb
