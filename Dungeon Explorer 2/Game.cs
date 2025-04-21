@@ -34,6 +34,7 @@ namespace Dungeon_Explorer_2
                 bool ConvertChecker = int.TryParse(strStartHealth, out StartHealth);
                 if (!ConvertChecker)
                 {
+                    OutputText("Input was incorrect format,");
                     StartHealth = -1;
                 }
                 if (StartHealth == 0)//Makes sure that starthealth is not 0, this is to ensure that if health becomes 0 through damage, it is not reset.
@@ -75,8 +76,8 @@ namespace Dungeon_Explorer_2
                         break;
                     }
                     OutputText("Game continuing");//Just here so I can see the game hasn't ended by input error 
-                    Player1.PickUpItem(Dagger);
                     Player1.PickUpItem(Dagger2);
+                    Player1.PickUpItem(Dagger);
                     Player1.PickUpItem(Dagger3);
                     Player1.PickUpItem(Dagger5);
                     Player1.PickUpItem(Healthpotion);
@@ -87,10 +88,7 @@ namespace Dungeon_Explorer_2
                     Player1.FilterInventory(Player1);
                     OutputText(Player1.InventoryContents());
 
-
-                    //List<Items> Potions = Player1.InventoryPotions();
-                    //OutputText(Player1.DisplayInventory(Potions));
-
+                    DisplayDetails(Player1);
                     playing = false; 
                 }
             }
@@ -102,7 +100,7 @@ namespace Dungeon_Explorer_2
         }
         void DisplayDetails(Creature Creature)
         {
-            OutputText($"Entity details are below:");
+            OutputText($"\nEntity details are below:");
             DisplayName(Creature);
             DisplayHealth(Creature);
             OutputText("");

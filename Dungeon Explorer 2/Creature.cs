@@ -18,15 +18,19 @@ namespace Dungeon_Explorer_2
             get { return _name; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (Name==null)
                 {
-                    OutputText("Name has been set to Creature due to lack of answer");
-                    _name = "Creature";
-                }
+                    if (string.IsNullOrEmpty(value))
+                    {
+                        OutputText("Invalid name has been set");
+                        OutputText("Please try again! \nWhat is the player name? ");
+                        Name = Console.ReadLine();
+                    }
 
-                else
-                {
-                    _name = value;
+                    else
+                    {
+                        _name = value;
+                    }
                 }
             }
         }
@@ -35,19 +39,22 @@ namespace Dungeon_Explorer_2
             get { return _health; }
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (Health <= 0)
                 {
-                    OutputText("Health has been set to 100 due to lack of answer");
-                    _health = 100;
-                }
-                else if (value < 0)
-                {
-                    OutputText("Health has been set to 100 due to answer being less than 0");
-                    _health = 100;
-                }
-                else
-                {
-                    _health = value;
+                    if (string.IsNullOrEmpty(value.ToString()))
+                    {
+                        OutputText("Health has not been set. Please try again");
+                        _health = 100;
+                    }
+                    else if (value < 0)
+                    {
+                        OutputText("Health given was less than 0, setting to default 100");
+                        _health = 100;
+                    }
+                    else
+                    {
+                        _health = value;
+                    }
                 }
             }
         }

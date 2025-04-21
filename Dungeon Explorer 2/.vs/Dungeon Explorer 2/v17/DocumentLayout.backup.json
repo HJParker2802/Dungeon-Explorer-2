@@ -3,19 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -29,12 +33,8 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -43,18 +43,17 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T18:59:38.504Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs",
               "RelativeDocumentMoniker": "Game.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs*",
-              "RelativeToolTip": "Game.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBAAAAA+AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs",
+              "RelativeToolTip": "Game.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAcwC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T19:00:57.503Z",
               "IsPinned": true,
@@ -62,21 +61,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Creature.cs",
+              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Creature.cs",
+              "RelativeDocumentMoniker": "Creature.cs",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Creature.cs",
+              "RelativeToolTip": "Creature.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADIAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T16:58:33.096Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wEoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T21:56:01.387Z",
-              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Items.cs",
               "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Items.cs",
               "RelativeDocumentMoniker": "Items.cs",
@@ -84,8 +100,7 @@
               "RelativeToolTip": "Items.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAwwAkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T23:04:06.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T23:04:06.618Z"
             }
           ]
         }
