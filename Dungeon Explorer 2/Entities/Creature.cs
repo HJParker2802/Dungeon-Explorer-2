@@ -39,22 +39,14 @@ namespace Dungeon_Explorer_2
             get { return _health; }
             set
             {
-                if (Health <= 0)
+                if (value < 0)
                 {
-                    if (string.IsNullOrEmpty(value.ToString()))
-                    {
-                        OutputText("Health has not been set. Please try again");
-                        _health = 100;
-                    }
-                    else if (value < 0)
-                    {
-                        OutputText("Health given was less than 0, setting to default 100");
-                        _health = 100;
-                    }
-                    else
-                    {
-                        _health = value;
-                    }
+                    OutputText("Health given was less than 0, setting to default 100");
+                    _health = 100;
+                }
+                else
+                {
+                    _health = value;
                 }
             }
         }
@@ -79,8 +71,19 @@ namespace Dungeon_Explorer_2
                 }
             }
         }
-
-
+                       
+        public Creature(string name)
+        {
+            Name = name;
+            Health = 100;//Default value
+            Damage = -1; //Default value to be overriden by setters 
+        }
+        public Creature(string name, int health)
+        {
+            Name = name;
+            Health = health;
+            Damage = -1; //Default value to be overriden by setters 
+        }
         public Creature(string name, int health, int damage)
         {
             Name = name;
@@ -88,12 +91,14 @@ namespace Dungeon_Explorer_2
             Damage = damage;
         }
 
+        public abstract void Equip();//Not needed for creature
+        //This is use of Dynamic polymorphism, as it will get overridden.
         public virtual void OutputText(string Message)
         {
             for (int x = 0; x < Message.Length; x++)
             {
                 Console.Write(Message[x]);
-                Thread.Sleep(30);
+                Thread.Sleep(10);
             }
             Console.Write("\n");
         }

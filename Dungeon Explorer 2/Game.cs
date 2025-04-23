@@ -9,13 +9,17 @@ namespace Dungeon_Explorer_2
 {
     class Game : IOutable, IDamageable
     {
-        private Player Player1;
-        private Monster Monster1;
-        public Weapons Dagger = new Weapons("Rusty Dagger 25", 25, "A rusty dagger, barely better than using a fist, barely....");
-        public Weapons Dagger2 = new Weapons("Rusty Dagger 50", 50, "A rusty dagger, barely better than using a fist, barely....");
-        public Weapons Dagger3= new Weapons("Rusty Dagger 75", 75, "A rusty dagger, barely better than using a fist, barely....");
-        public Weapons Dagger5 = new Weapons("Rusty Dagger 100", 100, "A rusty dagger, barely better than using a fist, barely....");
-        public Potions Healthpotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel it making you feel better, you feel a desire to drink it....");
+        protected Player Player1;
+        protected Monster Monster1;
+
+
+        protected Weapons CurrentWeapon;
+        protected Weapons RustyDagger = new Weapons("Rusty Dagger", 25, "A rusty dagger, barely better than using a fist, barely....");
+        protected Weapons Dagger = new Weapons("Dagger", 50, "A freshly smithed dagger, far better than using a fist, yet still worse than any real sword");
+        protected Weapons LongSword = new Weapons("Long Sword", 75, "A freshly smithed long sword, far better than using a simple dagger, you feel it willing you to conquer the dungeon....");
+        protected Weapons EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
+
+        protected Potions HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
         
         public Game()
         {
@@ -51,7 +55,7 @@ namespace Dungeon_Explorer_2
                 OutputText(e.Message);
             }
         }
-        public void Start()
+        public void Run()
         {
             try
             {
@@ -76,19 +80,19 @@ namespace Dungeon_Explorer_2
                         break;
                     }
                     OutputText("Game continuing");//Just here so I can see the game hasn't ended by input error 
-                    Player1.PickUpItem(Dagger2);
-                    Player1.PickUpItem(Dagger);
-                    Player1.PickUpItem(Dagger3);
-                    Player1.PickUpItem(Dagger5);
-                    Player1.PickUpItem(Healthpotion);
-                    Player1.PickUpItem(Healthpotion);
-                    OutputText(Player1.InventoryContents());
+                    Player1.Collect(Dagger);
+                    Player1.Collect(RustyDagger);
+                    Player1.Collect(EnchantedLongSword);
+                    Player1.Collect(LongSword);
+                    Player1.Collect(HealthPotion);
+                    
 
-
-                    Player1.FilterInventory(Player1);
-                    OutputText(Player1.InventoryContents());
+                    Player1.ItemDetails();
 
                     DisplayDetails(Player1);
+                    Player1.Equip();
+                    DisplayDetails(Player1);
+
                     playing = false; 
                 }
             }
@@ -103,6 +107,7 @@ namespace Dungeon_Explorer_2
             OutputText($"\nEntity details are below:");
             DisplayName(Creature);
             DisplayHealth(Creature);
+            DisplayDamage(Creature);
             OutputText("");
         }
         void DisplayName(Creature Creature)
@@ -120,13 +125,17 @@ namespace Dungeon_Explorer_2
                 OutputText($"Health:{Creature.Health}");
             }
         }
+        void DisplayDamage(Creature Creature)
+        {
+            OutputText($"Damage:{Creature.Damage}");
+        }
 
         public virtual void OutputText(string Message)
         {
             for(int x=0; x < Message.Length; x++)
             {
                 Console.Write(Message[x]);
-                //Thread.Sleep(30);
+                Thread.Sleep(10);
             }
             Console.Write("\n");
         }
@@ -150,11 +159,5 @@ namespace Dungeon_Explorer_2
                 }
             }
         }
-
-        public virtual void Heal(Creature Healable, int Amount)
-        {
-            Healable.Health = Healable.Health + Amount;
-        }
-
     }
 }

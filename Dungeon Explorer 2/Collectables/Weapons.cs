@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
-    interface IDamageable
+    class Weapons : Items
     {
-        void Damage(Creature Attacked, Creature Attacker);
+        public Weapons(string itemName, int healthImpact, string description) : base(itemName, healthImpact, description){}
     }
 }

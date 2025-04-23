@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeon_Explorer_2
+namespace Dungeon_Explorer_2.Interfaces
 {
-    interface IDamageable
+    interface ICollectable
     {
-        void Damage(Creature Attacked, Creature Attacker);
+        void Collect(Items item);
     }
 }

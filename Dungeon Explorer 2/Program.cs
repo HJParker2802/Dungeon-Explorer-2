@@ -11,7 +11,7 @@ namespace Dungeon_Explorer_2
         static void Main(string[] args)
         {
             Game game = new Game();
-            game.Start();
+            game.Run();
             //Console.WriteLine("Game start has finished running");
             Exit();
         }
