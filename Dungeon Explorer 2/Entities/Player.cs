@@ -30,42 +30,35 @@ namespace Dungeon_Explorer_2
             string UseItem = Console.ReadLine();
             OutputText($"Item chosen: {UseItem}");
 
-            bool present = Inventory.Any(Inventory => Inventory.ItemName.Equals(UseItem,StringComparison.OrdinalIgnoreCase));//LINQ
+            Items Item = Inventory.FirstOrDefault(i => i.ItemName.Equals(UseItem, StringComparison.OrdinalIgnoreCase));
 
-            if(present)
+            if (Item != null && Item is IUsable UsableItem)
             {
-                OutputText("It worked");
-                for (int x=0; x<Inventory.Count; x++)
+                UsableItem.Use(this);
+                OutputText("Do you want to equip anything else? (Yes or No)");
+                if (Console.ReadLine().ToUpper().Contains("Y"))
                 {
-                    if (Inventory[x].ItemName.Equals(UseItem, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (Inventory[x].HealthImpact >= 0)
-                        {
-                            Damage = Inventory[x].HealthImpact;
-                        }
-                        else if (Inventory[x].HealthImpact <0)
-                        {//If it's less than 0, it is a health potion, so it is intended to impact the player health not the enemy health
-                            Health -= Inventory[x].HealthImpact;
-                        }
-                    }
-                }
-            } 
-            else
-            {
-                OutputText("Could not find item, would you like to try again? (Respond Yes or No)");
-                string UserChoice = Console.ReadLine();
-                if(UserChoice.ToUpper().Contains("Y"))
-                {
-                    OutputText("Trying again!");
                     Equip();
                 }
-                else { OutputText("No items were equipped"); }
-            }   
+            }
+            else
+            {
+                OutputText("Could not find item or item cannot be used. Try again? (Yes or No)");
+                if (Console.ReadLine().ToUpper().Contains("Y"))
+                {
+                    Equip();
+                }
+            }
         }
 
-        public void Collect(Items item)
+        public void Collect(Items Item)
         {
-            Inventory.Add(item);
+            Inventory.Add(Item);
+            FilterInventory();//Filters inventory so items are always in order of what is most beneficial to attack with
+        }
+        public void Remove(Items Item)
+        {
+            Inventory.Remove(Item);
             FilterInventory();//Filters inventory so items are always in order of what is most beneficial to attack with
         }
         public string InventoryContents()
@@ -138,8 +131,7 @@ namespace Dungeon_Explorer_2
                     }
                 }
                 OutputText("Do you want to look at another item? (Respond Yes or No)");
-                string UsersChoice = Console.ReadLine();
-                if (UsersChoice.ToUpper().Contains("Y"))
+                if (Console.ReadLine().ToUpper().Contains("Y"))
                 {
                     ItemDetails();
                 }
@@ -147,13 +139,12 @@ namespace Dungeon_Explorer_2
             else
             {
                 OutputText("Could not find item, would you like to try again? (Respond Yes or No)");
-                string UserChoice = Console.ReadLine();
-                if (UserChoice.ToUpper().Contains("Y"))
+                if (Console.ReadLine().ToUpper().Contains("Y"))
                 {
-                    OutputText("Trying again!");
+                    OutputText("Trying again!!");
                     ItemDetails();
                 }
-                else { OutputText("No items were equipped"); }
+                else { OutputText("No items were detailed"); }
             }
         }
 

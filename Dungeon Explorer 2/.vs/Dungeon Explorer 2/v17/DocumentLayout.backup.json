@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\collectables\\potions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:collectables\\potions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\collectables\\weapons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:collectables\\weapons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs",
               "RelativeDocumentMoniker": "Game.cs",
               "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs",
               "RelativeToolTip": "Game.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAIwFwAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowGoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T18:05:34.417Z",
               "IsPinned": true,
@@ -42,7 +50,7 @@
               "RelativeDocumentMoniker": "Entities\\Player.cs",
               "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Player.cs",
               "RelativeToolTip": "Entities\\Player.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwDUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T19:14:44.952Z",
               "IsPinned": true,
@@ -51,6 +59,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Potions.cs",
+              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Collectables\\Potions.cs",
+              "RelativeDocumentMoniker": "Collectables\\Potions.cs",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Collectables\\Potions.cs",
+              "RelativeToolTip": "Collectables\\Potions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T20:07:48.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Weapons.cs",
+              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Collectables\\Weapons.cs",
+              "RelativeDocumentMoniker": "Collectables\\Weapons.cs",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Collectables\\Weapons.cs",
+              "RelativeToolTip": "Collectables\\Weapons.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T20:11:31.328Z",
+              "EditorCaption": ""
             }
           ]
         }

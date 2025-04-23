@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
-    class Items
+    class Items: IOutable
     {
         private string _itemName;
         private int _healthImpact;
@@ -69,6 +70,15 @@ namespace Dungeon_Explorer_2
         public virtual string GetItemDescription()
         {
             return Description;
+        }
+        public virtual void OutputText(string Message)
+        {
+            for (int x = 0; x < Message.Length; x++)
+            {
+                Console.Write(Message[x]);
+                Thread.Sleep(10);
+            }
+            Console.Write("\n");
         }
     }
 }

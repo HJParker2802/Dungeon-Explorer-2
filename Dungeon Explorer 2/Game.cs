@@ -85,7 +85,8 @@ namespace Dungeon_Explorer_2
                     Player1.Collect(EnchantedLongSword);
                     Player1.Collect(LongSword);
                     Player1.Collect(HealthPotion);
-                    
+
+                    OutputText(Player1.InventoryContents());
 
                     Player1.ItemDetails();
 
