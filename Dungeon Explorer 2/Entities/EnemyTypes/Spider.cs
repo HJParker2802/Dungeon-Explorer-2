@@ -28,5 +28,18 @@ namespace Dungeon_Explorer_2.Entities.EnemyTypes
             Health = health;
             Damage = damage;
         }
+        public override void Attack(IDamageable AttackedCreature)
+        {
+            if(Health==0)
+            {
+                OutputText($"{Name} has already been destroyed!");
+            }
+            else
+            {
+                OutputText($"{Name} puts the target in a cocoon and bites the target for {Damage} damage!");
+                AttackedCreature.Damageable(Damage);
+            }
+
+        }
     }
 }

@@ -29,5 +29,20 @@ namespace Dungeon_Explorer_2
             Damage = damage;
         }
         public override void Equip() { OutputText("This does not do anything as Monsters do not need to pickup items"); }
+
+        public override void Attack(IDamageable AttackedCreature)
+        {
+            if (Health==0)
+            {
+                OutputText($"{Name} has already been destroyed!");
+            }
+            else
+            {
+                OutputText($"{Name} throws itself at the target and lands {Damage} damage!");
+                AttackedCreature.Damageable(Damage);
+            }
+            
+        }
+
     }
 }

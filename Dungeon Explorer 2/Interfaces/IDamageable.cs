@@ -8,6 +8,7 @@ namespace Dungeon_Explorer_2
 {
     interface IDamageable
     {
-        void Damage(Creature Attacked, Creature Attacker);
+        //void Damage(Creature Attacked, Creature Attacker);
+        void Damageable(int DamageAmount);
     }
 }

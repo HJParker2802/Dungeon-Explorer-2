@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Dungeon_Explorer_2.Entities;
+using Dungeon_Explorer_2.Entities.EnemyTypes;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -7,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
-    class Game : IOutable, IDamageable
+    class Game : IOutable
     {
         protected Player Player1;
         protected Monster Monster1;
@@ -18,7 +21,7 @@ namespace Dungeon_Explorer_2
         protected Weapons Dagger = new Weapons("Dagger", 50, "A freshly smithed dagger, far better than using a fist, yet still worse than any real sword");
         protected Weapons LongSword = new Weapons("Long Sword", 75, "A freshly smithed long sword, far better than using a simple dagger, you feel it willing you to conquer the dungeon....");
         protected Weapons EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
-
+        protected Items Torch = new Items("A torch", 0, "Just a torch from the wall");
         protected Potions HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
         
         public Game()
@@ -27,7 +30,6 @@ namespace Dungeon_Explorer_2
             {
                 OutputText("The game is starting, you will be asked for some quick details before the game starts");
 
-                // Initialize the game with one room and one player
                 OutputText("Getting user information");
                 OutputText("What is your name?");
                 string Temp_Name = Console.ReadLine();
@@ -47,7 +49,9 @@ namespace Dungeon_Explorer_2
                 }
 
                 Player1 = new Player(Temp_Name, StartHealth, -1); //Damage set as -1 so that it goes to default value
-                Monster1 = new Monster("Spider", 50, -1);
+                //Monster1 = new Spider("Spider", 50, -1);
+                Monster1 = new Boss("Giant");
+
                 OutputText("");
             }
             catch(Exception e)
@@ -81,18 +85,26 @@ namespace Dungeon_Explorer_2
                     }
                     OutputText("Game continuing");//Just here so I can see the game hasn't ended by input error 
                     Player1.Collect(Dagger);
-                    Player1.Collect(RustyDagger);
-                    Player1.Collect(EnchantedLongSword);
-                    Player1.Collect(LongSword);
-                    Player1.Collect(HealthPotion);
+                    //Player1.Collect(RustyDagger);
+                    //Player1.Collect(EnchantedLongSword);
+                    //Player1.Collect(LongSword);
+                    //Player1.Collect(HealthPotion);
 
-                    OutputText(Player1.InventoryContents());
+                    //OutputText(Player1.InventoryContents());
 
-                    Player1.ItemDetails();
+                    //Player1.ItemDetails();
 
                     DisplayDetails(Player1);
+
+                    //Player1.Attack(Monster1);
+                    //Monster1.Attack(Player1);
+
+
                     Player1.Equip();
-                    DisplayDetails(Player1);
+
+                    //Player1.Attack(Monster1);
+
+                    //DisplayDetails(Player1);
 
                     playing = false; 
                 }
@@ -139,26 +151,6 @@ namespace Dungeon_Explorer_2
                 Thread.Sleep(10);
             }
             Console.Write("\n");
-        }
-        public virtual void Damage(Creature Attacker, Creature Attacked)
-        {
-            if (Attacked.Health == 0)
-            {
-                OutputText($"{Attacked.Name} has been destroyed!");
-            }
-            else
-            {
-                if ((Attacked.Health - Attacker.Damage) < 0)
-                {
-                    Attacked.Health = 0;
-                    OutputText($"{Attacked.Name} has been destroyed!");
-                }
-                else
-                {
-                    Attacked.Health = Attacked.Health - Attacker.Damage;
-                    OutputText($"{Attacked.Name} took {Attacker.Damage} damage, health is now at {Attacked.Health}");
-                }
-            }
         }
     }
 }

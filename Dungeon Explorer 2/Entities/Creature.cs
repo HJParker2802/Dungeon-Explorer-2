@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
-    abstract class Creature : IOutable
+    abstract class Creature : IOutable, IDamageable
     {
         private string _name;
         private int _damage;
@@ -93,7 +93,7 @@ namespace Dungeon_Explorer_2
 
         public abstract void Equip();//Not needed for creature
         //This is use of Dynamic polymorphism, as it will get overridden.
-        public virtual void OutputText(string Message)
+        public void OutputText(string Message)
         {
             for (int x = 0; x < Message.Length; x++)
             {
@@ -101,6 +101,46 @@ namespace Dungeon_Explorer_2
                 Thread.Sleep(10);
             }
             Console.Write("\n");
+        }
+
+        public virtual void Damageable(int DamageAmount)
+        {
+            if (Health == 0)
+            {
+                OutputText($"{Name} has already been destroyed!");
+            }
+
+            else if ((Health - DamageAmount) < 0)
+            {
+                Health = 0;
+                OutputText($"{Name} has been destroyed!");
+            }
+            else
+            {
+                Health -= DamageAmount;
+
+                if (Health == 0)
+                {
+                    OutputText($"{Name} has been destroyed!");
+                }
+                else
+                {
+                    OutputText($"{Name} took {DamageAmount} damage, health is now at {Health}");
+                }
+            }
+        }
+        public virtual void Attack(IDamageable AttackedCreature)
+        {
+            if (Health == 0)
+            {
+                OutputText($"{Name} has already been destroyed!");
+            }
+            else
+            {
+                OutputText($"{Name} attacks for {Damage} damage!");
+                AttackedCreature.Damageable(Damage);
+            }
+            
         }
     }
 }

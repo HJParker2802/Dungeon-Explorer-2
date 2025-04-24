@@ -1,0 +1,119 @@
+﻿using Dungeon_Explorer_2.Entities;
+using Dungeon_Explorer_2.Entities.EnemyTypes;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Dungeon_Explorer_2
+{
+    class Testing : IOutable
+    {
+        protected Player Player1;
+        protected Monster Monster1;
+
+        protected Weapons CurrentWeapon;
+        protected Weapons RustyDagger = new Weapons("Rusty Dagger", 25, "A rusty dagger, barely better than using a fist, barely....");
+        protected Weapons Dagger = new Weapons("Dagger", 50, "A freshly smithed dagger, far better than using a fist, yet still worse than any real sword");
+        protected Weapons LongSword = new Weapons("Long Sword", 75, "A freshly smithed long sword, far better than using a simple dagger, you feel it willing you to conquer the dungeon....");
+        protected Weapons EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
+        protected Weapons Torch = new Weapons("A torch", 1, "Just a torch from the wall");
+        protected Potions HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
+
+        protected GameMap Levels = new GameMap();
+
+        public Testing()
+        {
+
+            try
+            {
+                OutputText("The Tests are starting");
+
+                // Initialize the game with one room and one player
+                Player1 = new Player("Testing Player", 100, 15);
+                Monster1 = new Spider("Spider", 50, -1);
+                Debug.Assert(Player1.Name == "Testing Player");
+                Debug.Assert(Player1.Health == 100);
+                OutputText("");
+            }
+            catch (Exception e)
+            {
+                OutputText(e.Message);
+            }
+        }
+        public void Run()
+        {
+            DisplayDetails(Player1);
+            DisplayDetails(Monster1);
+            Levels.MakeRooms();
+            Levels.PreviousRoom();
+            Levels.NextRoom();
+            Levels.NextRoom();
+            Levels.NextRoom();
+            Levels.NextRoom();
+            Levels.NextRoom();
+
+            while((Player1.Health!=0) || (Monster1.Health!=0))
+            {
+                Player1.Attack(Monster1);
+                if ((Player1.Health == 0) || (Monster1.Health == 0)) { break; }
+            }
+            Debug.Assert(Monster1.Health == 2);
+            Player1.Health = 100;
+            Monster1.Health = 100;
+            while ((Player1.Health != 0) || (Monster1.Health != 0))
+            {
+                Monster1.Attack(Player1);
+                if ((Player1.Health == 0) || (Monster1.Health == 0)) { break; }
+            }
+            Debug.Assert(Player1.Health == 0);
+            Player1.Health = 100;
+            Monster1.Health = 100;
+
+            Player1.InventoryContents();
+            Player1.Collect(Torch);
+            Player1.Equip();
+
+        }
+        void DisplayDetails(Creature Creature)
+        {
+            OutputText($"\nEntity details are below:");
+            DisplayName(Creature);
+            DisplayHealth(Creature);
+            DisplayDamage(Creature);
+            OutputText("");
+        }
+        void DisplayName(Creature Creature)
+        {
+            OutputText($"Name:{Creature.Name}");
+        }
+        void DisplayHealth(Creature Creature)
+        {
+            if (Creature.Health == 0)
+            {
+                OutputText($"{Creature.Name} has been destroyed");
+            }
+            else
+            {
+                OutputText($"Health:{Creature.Health}");
+            }
+        }
+        void DisplayDamage(Creature Creature)
+        {
+            OutputText($"Damage:{Creature.Damage}");
+        }
+
+        public virtual void OutputText(string Message)
+        {
+            for (int x = 0; x < Message.Length; x++)
+            {
+                Console.Write(Message[x]);
+                Thread.Sleep(0);
+            }
+            Console.Write("\n");
+        }
+    }
+}
