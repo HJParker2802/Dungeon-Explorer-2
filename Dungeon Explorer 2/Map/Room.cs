@@ -19,5 +19,9 @@ namespace Dungeon_Explorer_2
         {
             return description;
         }
+        public void ChangeDescription(string NewDescription)
+        {
+            description = NewDescription;
+        }
     }
 }

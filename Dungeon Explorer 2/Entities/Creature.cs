@@ -41,7 +41,7 @@ namespace Dungeon_Explorer_2
             {
                 if (value < 0)
                 {
-                    OutputText("Health given was less than 0, setting to default 100");
+                    OutputText("Health given was invalid, setting to default 100");
                     _health = 100;
                 }
                 else

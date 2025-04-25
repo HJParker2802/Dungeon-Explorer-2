@@ -82,6 +82,7 @@ namespace Dungeon_Explorer_2
         {
             Inventory.Add(Item);
             FilterInventory();//Filters inventory so items are always in order of what is most beneficial to attack with
+            Statistics.CollectedItems++;
         }
         public void Remove(Items Item)
         {

@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\program\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:program\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\map\\gamemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:map\\gamemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\entities\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:entities\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\entities\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:entities\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\entities\\enemytypes\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:entities\\enemytypes\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|c:\\users\\hazpa\\onedrive\\documents\\github\\dungeon-explorer-2\\dungeon explorer 2\\map\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C5275FB-C22D-4AD8-98C2-9972A56EC969}|Dungeon Explorer 2.csproj|solutionrelative:map\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,34 +22,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs",
-              "RelativeDocumentMoniker": "Game.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Game.cs",
-              "RelativeToolTip": "Game.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAcwJIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T18:05:34.417Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Player.cs",
-              "RelativeDocumentMoniker": "Entities\\Player.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Player.cs",
-              "RelativeToolTip": "Entities\\Player.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAgwC4AAAAVAAAAAAAAAA==",
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Map\\Room.cs",
+              "RelativeDocumentMoniker": "Map\\Room.cs",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Map\\Room.cs",
+              "RelativeToolTip": "Map\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T21:06:41.567Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-04-25T23:15:22.535Z",
               "EditorCaption": ""
             },
             {
@@ -78,80 +43,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Boss.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\EnemyTypes\\Boss.cs",
-              "RelativeDocumentMoniker": "Entities\\EnemyTypes\\Boss.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\EnemyTypes\\Boss.cs",
-              "RelativeToolTip": "Entities\\EnemyTypes\\Boss.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GameMap.cs",
+              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Map\\GameMap.cs",
+              "RelativeDocumentMoniker": "Map\\GameMap.cs",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Map\\GameMap.cs*",
+              "RelativeToolTip": "Map\\GameMap.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:27:49.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Monster.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Monster.cs",
-              "RelativeDocumentMoniker": "Entities\\Monster.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Monster.cs",
-              "RelativeToolTip": "Entities\\Monster.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:23:29.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Creature.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Creature.cs",
-              "RelativeDocumentMoniker": "Entities\\Creature.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Entities\\Creature.cs",
-              "RelativeToolTip": "Entities\\Creature.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAUwG0AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:23:29.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T19:40:06.956Z",
+              "WhenOpened": "2025-04-25T17:18:26.434Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Testing.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Testing.cs",
-              "RelativeDocumentMoniker": "Testing.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Testing.cs",
-              "RelativeToolTip": "Testing.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwEcAAAAsAAAAAAAAAA==",
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Program\\Game.cs",
+              "RelativeDocumentMoniker": "Program\\Game.cs",
+              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Program\\Game.cs",
+              "RelativeToolTip": "Program\\Game.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAgwLsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T19:33:22.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameMap.cs",
-              "DocumentMoniker": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Map\\GameMap.cs",
-              "RelativeDocumentMoniker": "Map\\GameMap.cs",
-              "ToolTip": "C:\\Users\\hazpa\\OneDrive\\Documents\\GitHub\\Dungeon-Explorer-2\\Dungeon Explorer 2\\Map\\GameMap.cs",
-              "RelativeToolTip": "Map\\GameMap.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAswB4AAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T19:21:02.956Z",
+              "WhenOpened": "2025-04-25T15:12:36.628Z",
               "EditorCaption": ""
             }
           ]

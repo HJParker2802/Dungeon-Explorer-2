@@ -46,7 +46,7 @@
     <Compile Include="Entities\EnemyTypes\Boss.cs" />
     <Compile Include="Entities\Creature.cs" />
     <Compile Include="Entities\EnemyTypes\Spider.cs" />
-    <Compile Include="Game.cs" />
+    <Compile Include="Program\Game.cs" />
     <Compile Include="Interfaces\IUsable.cs" />
     <Compile Include="Map\GameMap.cs" />
     <Compile Include="Interfaces\ICollectable.cs" />
@@ -56,11 +56,12 @@
     <Compile Include="Entities\Monster.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Collectables\Potions.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Program\Program.cs" />
+    <Compile Include="Program\Statistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Map\Room.cs" />
     <Compile Include="Collectables\Weapons.cs" />
-    <Compile Include="Testing.cs" />
+    <Compile Include="Program\Testing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
