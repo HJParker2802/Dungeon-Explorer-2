@@ -26,7 +26,6 @@ namespace Dungeon_Explorer_2
         protected Items CurrentWeapon;
         protected Items RustyDagger;
         protected Items String;
-        protected Items LongSword;
         protected Items EnchantedLongSword;
         protected Items Torch;
         protected Items HealthPotion;
@@ -86,6 +85,7 @@ namespace Dungeon_Explorer_2
                 LevelSystem.MakeRooms();
                 List<Items> Room1Collectables = new List<Items>() {String, RustyDagger };
                 List<Items> Room2Collectables = new List<Items>() {Torch };
+                List<Items> Room5Collectables = new List<Items>() {EnchantedLongSword, HealthPotion};
 
                 while (playing)
                 {
@@ -95,6 +95,7 @@ namespace Dungeon_Explorer_2
                         playing = false;
                         break;
                     }
+                    if (!playing) { break; }
                     //OutputText("Do you want to stop playing?");
                     //string Answer = Console.ReadLine();
                     //if (Answer.ToUpper().Contains("Y")){ playing = false; break; }
@@ -143,7 +144,6 @@ namespace Dungeon_Explorer_2
                             else if (OptionsAnswer == 2) { ThePlayer.ItemDetails(); }
                             break;
                         case 5:
-                            //Crap goes here
                             if (LevelSystem.CurrentRoom == LevelSystem.Room1)
                             {
                                 if (Room1Collectables.Count == 0)
@@ -185,9 +185,193 @@ namespace Dungeon_Explorer_2
                             }
                             else if (LevelSystem.CurrentRoom == LevelSystem.Room3)
                             {
-                                
+                                if (RegSpider.Health !=0)
+                                {
+                                    OutputText($"{RegSpider.Name} has found you!");
+                                    while (RegSpider.Health != 0)
+                                    {
+                                        if (RegSpider.Health == 0) { break; }
+                                        RegSpider.Attack(ThePlayer);
+                                        OutputText($"Do you want to attack {RegSpider.Name}?(Yes or No)");
+                                        if (Console.ReadLine().ToUpper().Contains("Y"))
+                                        {
+                                            ThePlayer.Attack(RegSpider);
+                                        }
+                                    }
+                                    Statistics.Kills++;
+                                }
+                                else
+                                {
+                                    OutputText($"You have already killed the {RegSpider.Name}");
+                                }                                
                             }
-                            break;
+                            else if (LevelSystem.CurrentRoom == LevelSystem.Room4)
+                            {
+                                if (HugeRat.Health != 0)
+                                {
+                                    OutputText($"{HugeRat.Name}has found you!");
+                                    while (HugeRat.Health != 0)
+                                    {
+                                        if (HugeRat.Health == 0) { break; }
+                                        HugeRat.Attack(ThePlayer);
+                                        if (ThePlayer.Health == 0) { playing = false; break; }
+                                        OutputText($"Do you want to attack {HugeRat.Name}?(Yes or No)");
+                                        if (Console.ReadLine().ToUpper().Contains("Y"))
+                                        {
+                                            ThePlayer.Attack(HugeRat);
+                                        }
+                                    }
+                                    Statistics.Kills++;
+                                }
+                                else
+                                {
+                                    OutputText($"You have already killed {HugeRat.Name}");
+                                }
+                            }
+                            else if (LevelSystem.CurrentRoom == LevelSystem.Room5)
+                            {
+                                OptionsAnswer = 0;
+                                while (OptionsAnswer !=1 || OptionsAnswer !=2)
+                                {
+                                    OutputText("What do you want to do?");
+                                    OutputText("[1] Attack the mouse");
+                                    OutputText("[2] Investigate the shine in the corner");
+                                    bool ConverChecker = int.TryParse(Console.ReadLine(), out OptionsAnswer);
+                                    if (OptionsAnswer ==1 || OptionsAnswer == 2) { break; }
+                                }
+                                if (OptionsAnswer==1)
+                                {
+                                    if(LittleMouse.Health !=0)
+                                    {
+                                        while (LittleMouse.Health != 0)
+                                        {
+                                            if (LittleMouse.Health == 0) { break; }
+                                            ThePlayer.Attack(LittleMouse);
+                                        }
+                                        Statistics.Kills++;
+                                    }
+                                    else
+                                    {
+                                        OutputText($"{LittleMouse.Name} has already been defeated!");
+                                    }
+                                    
+                                }
+                                else if (OptionsAnswer==2)
+                                {
+                                    OutputText("You approach the shine in the corner");
+                                    OutputText("You find a chest made of glass");
+                                    OutputText("Do you want to investigate the chest?(Yes or No)");
+                                    if(Console.ReadLine().ToUpper().Contains("Y"))
+                                    {
+                                        if (Room5Collectables.Count == 0)
+                                        {
+                                            OutputText("You go back over the the chest");
+                                            OutputText("The chest is empty");
+                                        }
+                                        else
+                                        {
+                                            OutputText("You open the glass chest and see a shining longsword and a glowing health potion");
+                                            for (int x = 0; x < Room5Collectables.Count; x++)
+                                            {
+                                                ThePlayer.Collect(Room5Collectables[x]);
+                                            }
+                                            Room5Collectables.Clear();
+                                            ThePlayer.ItemDetails();
+                                        }
+                                    }
+                                }
+                            }
+                            else if (LevelSystem.CurrentRoom == LevelSystem.Room6)
+                            {
+                                OptionsAnswer = 0;
+                                while (OptionsAnswer != 1 || OptionsAnswer != 2)
+                                {
+                                    OutputText("What do you want to do?");
+                                    OutputText($"[1] Attack the {HugeOgre.Name}");
+                                    OutputText($"[2] Attack the {HugeSpider.Name}");
+                                    bool ConverChecker = int.TryParse(Console.ReadLine(), out OptionsAnswer);
+                                    if (OptionsAnswer == 1 || OptionsAnswer == 2) { break; }
+                                }
+                                if (OptionsAnswer == 1)
+                                {
+                                    if (HugeOgre.Health != 0)
+                                    {
+                                        while (HugeOgre.Health != 0)
+                                        {
+                                            HugeOgre.Attack(ThePlayer);
+                                            if (ThePlayer.Health == 0) { playing = false; break; }
+                                            OutputText($"Do you want to attack {HugeOgre.Name}?(Yes or No)");
+                                            if (Console.ReadLine().ToUpper().Contains("Y"))
+                                            {
+                                                ThePlayer.Attack(HugeOgre);
+                                            }
+                                            if (HugeOgre.Health == 0) { OutputText("The answer is 12, remember that!"); break; }
+                                        }
+                                        Statistics.Kills++;
+                                    }
+                                    else
+                                    {
+                                        OutputText($"{HugeOgre.Name} has already been defeated!");
+                                    }
+                                }
+                                else if (OptionsAnswer == 2)
+                                {
+                                    if (HugeSpider.Health != 0)
+                                    {
+                                        while (HugeSpider.Health != 0)
+                                        {
+                                            if (HugeSpider.Health == 0) { break; }
+                                            HugeSpider.Attack(ThePlayer);
+                                            if (ThePlayer.Health == 0) { playing = false; break; }
+                                            OutputText($"Do you want to attack {HugeSpider.Name}?(Yes or No)");
+                                            if (Console.ReadLine().ToUpper().Contains("Y"))
+                                            {
+                                                ThePlayer.Attack(HugeSpider);
+                                            }
+                                        }
+                                        Statistics.Kills++;
+                                    }
+                                    else
+                                    {
+                                        OutputText($"{HugeSpider.Name} has already been defeated!");
+                                    }
+
+                                }
+                            }
+                            else if (LevelSystem.CurrentRoom == LevelSystem.Room7)
+                            {
+                                OutputText("The bed disappears and turns into a sheet of paper");
+                                OutputText("On the paper you see a riddle ");
+                                OutputText("I’m a number greater than ten, ");
+                                OutputText("A dozen eggs, again and again.");
+                                OutputText("Three times four, or six times two,");
+                                OutputText("A highly composite point of view.");
+                                OutputText("What number am I ? ");
+                                OutputText("Hint, the ogre should have told you when it died, as long as you defeated it....");
+                                string Answer = "";
+                                while (Answer != "12")
+                                {
+                                    if (Answer == "12") { break; }
+                                    OutputText("What number am I");
+                                    Answer = Console.ReadLine();
+                                }
+                                TrapSolved = true;
+                                OutputText("You have successfully completed the riddle, you may go to the next room.");
+                            }
+                            else if (LevelSystem.CurrentRoom == LevelSystem.Room8)
+                            {
+                                OutputText("In front of you, you see a bed, it is finally time to rest");
+                                OutputText("Do you want to get into the bed?(Yes or No)");
+                                if (Console.ReadLine().ToUpper().Contains("Y"))
+                                {
+                                    OutputText("You get into the bed, you may finally rest!");
+                                    OutputText($"{ThePlayer.Name} has won!");
+                                    OutputText("Game ending");
+                                    playing = false;
+                                    break;
+                                }
+                            }
+                        break;
 
                         case 6:
                             OptionsAnswer = 0;
@@ -267,7 +451,6 @@ namespace Dungeon_Explorer_2
         {
             RustyDagger = new Weapons("Rusty Dagger", 25, "A rusty dagger, barely better than using a fist, barely....");
             String = new Items("Piece of String", 0, "A piece of string, it is completely useless");
-            LongSword = new Weapons("Long Sword", 75, "A freshly smithed long sword, far better than using a simple dagger, you feel it willing you to conquer the dungeon....");
             EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
             Torch = new Weapons("A torch", 0, "Just a torch from the wall");
             HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
