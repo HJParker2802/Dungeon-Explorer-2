@@ -8,12 +8,22 @@ namespace Dungeon_Explorer_2.Entities
 {
     class Boss : Monster
     {
+
+        /// <summary>
+        /// Constructor for the Boss class
+        /// </summary>
+        /// <param name="name"> pushes the name to the base class</param>
         public Boss(string name) : base(name)
         {
             Name = name;
             Health = 1000;//Default value
             Damage = 45;//Default value
         }
+
+        /// <summary>
+        /// Attack function specific to the Boss class
+        /// </summary>
+        /// <param name="AttackedCreature"></param>
         public override void Attack(IDamageable AttackedCreature)
         {
             if(Health==0)

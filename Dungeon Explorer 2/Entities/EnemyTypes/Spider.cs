@@ -10,24 +10,42 @@ namespace Dungeon_Explorer_2.Entities.EnemyTypes
 {
     class Spider : Monster
     {
+
+        /// <summary>
+        /// Constructor for the Spider class
+        /// </summary>
+        /// <param name="name">gets pushed to base</param>
         public Spider(string name) : base(name)
         {
             Name = name;
             Health = 75;//Default value
             Damage = 15;//Default value
         }
+
+        /// <summary>
+        /// Constructor for the Spider class
+        /// </summary>
+        /// <param name="name">gets pushed to base</param>
+        /// <param name="health">gets pushed to base</param>
         public Spider(string name, int health) : base(name, health)
         {
             Name = name;
             Health = health;
             Damage = 15;//Default value
         }
-        public Spider(string name, int health,int damage) : base(name, health, damage)
-        {
-            Name = name;
-            Health = health;
-            Damage = damage;
-        }
+
+        /// <summary>
+        /// Constructor for the Spider class
+        /// </summary>
+        /// <param name="name">gets pushed to base</param>
+        /// <param name="health">gets pushed to base</param>
+        /// <param name="damage">gets pushed to base</param>
+        public Spider(string name, int health,int damage) : base(name, health, damage) { }
+
+        /// <summary>
+        /// Attack function specific to the spider class
+        /// </summary>
+        /// <param name="AttackedCreature"></param>
         public override void Attack(IDamageable AttackedCreature)
         {
             if(Health==0)

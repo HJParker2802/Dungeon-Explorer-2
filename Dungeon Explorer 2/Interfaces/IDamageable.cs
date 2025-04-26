@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+    /// <summary>
+    /// This is the IDamageable interface,
+    /// it is used to damage a creature 
+    /// </summary>
     interface IDamageable
     {
-        //void Damage(Creature Attacked, Creature Attacker);
         void Damageable(int DamageAmount);
     }
 }

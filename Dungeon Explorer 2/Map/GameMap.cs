@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+    /// <summary>
+    /// This is the Gamemap class, it inherits from IOutable
+    /// </summary>
     class GameMap : IOutable
     {
+        /// <summary>
+        /// This is where all the Rooms are declared
+        /// </summary>
         public Room CurrentRoom;
         public Room Room1;
         public Room Room2;
@@ -19,6 +25,9 @@ namespace Dungeon_Explorer_2
         public Room Room7;
         public Room Room8;
 
+        /// <summary>
+        /// This functions declare all the rooms with their set descriptions
+        /// </summary>
         public void MakeRooms()
         {
             string Description;
@@ -34,11 +43,20 @@ namespace Dungeon_Explorer_2
             OutputText(Description = CurrentRoom.GetDescription());
         }
         
+        /// <summary>
+        /// This returns the description for the current room 
+        /// </summary>
+        /// <returns></returns>
+        /// <seealso cref="Room.GetDescription()"/>
         public string GetDescription()
         {
             string CurrentDescription = CurrentRoom.GetDescription();
             return CurrentDescription;
         }
+
+        /// <summary>
+        /// This finds out what room you are in and allows the user to move forward a room
+        /// </summary>
         public void NextRoom()
         {
             string Description;
@@ -52,6 +70,9 @@ namespace Dungeon_Explorer_2
             else if (CurrentRoom == Room8) { OutputText("Cannot go further, Player is in the final room"); }
         }
 
+        /// <summary>
+        /// This finds out what room you are in and allows the user to move backwards a room
+        /// </summary>
         public void PreviousRoom()
         {
             string Description;
@@ -66,6 +87,13 @@ namespace Dungeon_Explorer_2
 
         }
 
+        /// <summary>
+        /// Uses the function from interface IOutable
+        /// Outputs text given to it
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <returns>The Output Message, character by character with a sleep 0f 30</returns>
+        /// <seealso cref="IOutable.OutputText(string)"/>
         public virtual void OutputText(string Message)
         {
             for (int x = 0; x < Message.Length; x++)

@@ -8,12 +8,29 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+    /// <summary>
+    /// Items class, inherits from IOutable
+    /// </summary>
     class Items: IOutable
     {
+        /// <summary>
+        /// Where item names are privately stored
+        /// </summary>
         private string _itemName;
+
+        /// <summary>
+        /// Where Health impacts are privately stored
+        /// </summary>
         private int _healthImpact;
+
+        /// <summary>
+        /// Where descriptions are privately stored
+        /// </summary>
         private string _description;
 
+        /// <summary>
+        /// This is where the getters and setters for the ItemName are, ensuring only valid names can be input
+        /// </summary>
         public string ItemName
         {
             get { return _itemName; }
@@ -29,6 +46,10 @@ namespace Dungeon_Explorer_2
                 }
             }
         }
+
+        /// <summary>
+        /// This is where the getters and setters for the health impact are, ensuring only valid names can be input
+        /// </summary>
         public int HealthImpact
         {
             get { return _healthImpact; }
@@ -44,6 +65,10 @@ namespace Dungeon_Explorer_2
                 }
             }
         }
+
+        /// <summary>
+        /// This is where the getters and setters for the Description are, ensuring only valid names can be input
+        /// </summary>
         public string Description
         {
             get { return _description; }
@@ -60,6 +85,13 @@ namespace Dungeon_Explorer_2
             }
         }
 
+
+        /// <summary>
+        /// Constructor for Items
+        /// </summary>
+        /// <param name="itemName"> pushes to Itemname for getters and setters</param>
+        /// <param name="healthImpact">pushes to HealthImpact for getters and setters</param>
+        /// <param name="description">pushes to Description for getters and setters</param>
         public Items(string itemName, int healthImpact, string description)
         {
             ItemName = itemName;
@@ -67,10 +99,24 @@ namespace Dungeon_Explorer_2
             Description = description;
         }
 
+
+        /// <summary>
+        /// Getst the item description
+        /// </summary>
+        /// <returns>returns description </returns>
         public virtual string GetItemDescription()
         {
             return Description;
         }
+
+
+        /// <summary>
+        /// Uses the function from interface IOutable
+        /// Outputs text given to it
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <returns>The Output Message, character by character with a sleep 0f 30</returns>
+        /// <seealso cref="IOutable.OutputText(string)"/>
         public virtual void OutputText(string Message)
         {
             for (int x = 0; x < Message.Length; x++)

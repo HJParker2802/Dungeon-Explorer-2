@@ -8,28 +8,51 @@ namespace Dungeon_Explorer_2
 {
     class Monster : Creature
     {
-
+        /// <summary>
+        /// This is the constructor for Creature with only the name parameter
+        /// </summary>
+        /// <param name="name">declares the name back to base to ensure it is valid</param>
         public Monster(string name) : base(name)
         {
             Name = name;
-            Health = 100;//Default value
-            Damage = 15;//Default value
         }
 
+        /// <summary>
+        /// This is the constructor for Creature with only the name and health parameter
+        /// </summary>
+        /// <param name="name">declares the name back to base to ensure it is valid</param>
+        /// <param name="health">declares the health back to base to ensure it is valid</param>
         public Monster(string name, int health) : base(name, health)
         {
             Name = name;
             Health = health;
-            Damage = 15;
         }
+
+        /// <summary>
+        /// This is the constructor for Creature with the name, health and damage parameter
+        /// </summary>
+        /// <param name="name">declares the name back to base to ensure it is valid</param>
+        /// <param name="health">declares the health back to base to ensure it is valid</param>
+        /// <param name="damage">declares the damage back to base to ensure it is valid</param>
         public Monster(string name, int health, int damage) : base(name, health, damage)
         {
             Name = name;
             Health = health;
             Damage = damage;
         }
+
+        /// <summary>
+        /// Equip function does not get used by Monsters, if used, will output saying it does nothing.
+        /// </summary>
         public override void Equip() { OutputText("This does not do anything as Monsters do not need to pickup items"); }
 
+
+        /// <summary>
+        /// This is the Attack function, It checks if the player is dead before attacking,
+        /// and if they aren't, calls the Damageable function to take damage
+        /// </summary>
+        /// <param name="AttackedCreature"></param>
+        /// <seealso cref="Creature.Damageable(int)"/>
         public override void Attack(IDamageable AttackedCreature)
         {
             if (Health==0)

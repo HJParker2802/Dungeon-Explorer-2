@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+    /// <summary>
+    /// Potions class, inherits from Items and IUsable
+    /// </summary>
     class Potions : Items, IUsable
     {
         public Potions(string itemName, int healthImpact, string description) : base(itemName, healthImpact, description){}
 
+        /// <summary>
+        /// Use function for the Potions to heal the player
+        /// </summary>
+        /// <param name="Player1"></param>
         public void Use(Player Player1)
         {
             int healed = -HealthImpact;

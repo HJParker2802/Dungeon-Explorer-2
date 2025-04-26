@@ -12,17 +12,34 @@ namespace Dungeon_Explorer_2
     class Player : Creature, ICollectable
     {
         private List<Items> Inventory = new List<Items> { };
-        private List<Items> WeaponInventory;
-        private List<Items> PotionInventory;
         private Items CurrentItem;
 
         //Method overloading = use of static polymorphism
+        
+        /// <summary>
+        /// Constructor for Player class
+        /// </summary>
+        /// <param name="name">pushes name to base</param>
+        /// <param name="health">pushes health to base</param>
         public Player(string name, int health) : base(name, health)
         {
             Damage = 15;
         }
+
+
+        /// <summary>
+        /// Constructor for Player class
+        /// </summary>
+        /// <param name="name"> pushes name to main</param>
+        /// <param name="health"> pushes health to main</param>
+        /// <param name="damage"> pushes damage to main</param>
         public Player(string name, int health, int damage) : base(name, health, damage) { }
 
+
+        /// <summary>
+        /// Allows player to equip items, strongest in inventory 
+        /// or choose items they want to use themselves
+        /// </summary>
         public override void Equip()
         {
             if (Inventory.Count == 0)
@@ -78,23 +95,36 @@ namespace Dungeon_Explorer_2
             }
         }
 
+        /// <summary>
+        /// ALlows Player to collect Items 
+        /// </summary>
+        /// <param name="Item"></param>
         public void Collect(Items Item)
         {
             Inventory.Add(Item);
             FilterInventory();//Filters inventory so items are always in order of what is most beneficial to attack with
             Statistics.CollectedItems++;
         }
+
+        /// <summary>
+        /// Removes set Items from the players inventory, used specifically for healthpotion to ensure player can't spam it and have unlimited health
+        /// </summary>
+        /// <param name="Item"></param>
         public void Remove(Items Item)
         {
             Inventory.Remove(Item);
             FilterInventory();//Filters inventory so items are always in order of what is most beneficial to attack with
         }
+
+        /// <summary>
+        /// Outputs the inventory content in the form of a string
+        /// </summary>
+        /// <returns></returns>
         public string InventoryContents()
         {
             if (Inventory.Count == 0)
             {
-                OutputText("There are no items in inventory");
-                return "";
+                return "There are no items in inventory";
             }
             else
             {
@@ -108,34 +138,10 @@ namespace Dungeon_Explorer_2
                 return Contents;
             }
         }
-        public List<Items> InventoryWeapons()
-        {
-            WeaponInventory =
-                Inventory.OfType<Weapons>()
-                .Cast<Items>().ToList();
 
-            return WeaponInventory;
-        }
-        public List<Items> InventoryPotions()
-        {
-            PotionInventory =
-                Inventory.OfType<Potions>()
-                .Cast<Items>().ToList();
-            return PotionInventory;
-        }
-
-        public string DisplayInventory(List<Items> SetInventory)
-        {
-            string Contents = "";
-            for (int i = 0; i < SetInventory.Count; i++)
-            {
-                Contents = $"{Contents} {SetInventory[i].ItemName},";
-            }
-
-            Contents = Contents.Remove(Contents.Length - 1);
-            return Contents;
-        }
-
+        /// <summary>
+        /// Filters the players inventory to ensure the strongest item is always at the start.
+        /// </summary>
         public void FilterInventory()
         {//Use of Ternary Chain
             Inventory = Inventory
@@ -146,6 +152,10 @@ namespace Dungeon_Explorer_2
                 .ToList();
         }
 
+        /// <summary>
+        /// Shows the Item Details so the player knows what all of their items do. 
+        /// </summary>
+        /// <seealso cref="Equip()"/>
         public void ItemDetails()
         {
             if (Inventory.Count == 0)
@@ -192,6 +202,12 @@ namespace Dungeon_Explorer_2
             }
         }
 
+        /// <summary>
+        /// This is the Attack function, It checks if the player is dead before attacking,
+        /// and if they aren't, calls the Damageable function to take damage
+        /// </summary>
+        /// <param name="AttackedCreature"></param>
+        /// <seealso cref="Damageable(int)"/>
         public override void Attack(IDamageable AttackedCreature)
         {
             if (Health ==0)
@@ -206,7 +222,6 @@ namespace Dungeon_Explorer_2
                 }
                 else if (CurrentItem != null)
                 {//Use weapon
-                    OutputText($"{Name} attacks for {Damage} damage!");
                     OutputText($"{Name} strategically uses the blade and slices the target with {Damage} damage!");
                 }
                 AttackedCreature.Damageable(Damage);

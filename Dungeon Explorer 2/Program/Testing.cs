@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+    /// <summary>
+    /// Testing class, inherits from IOutable,
+    /// This is made to test out features of the game before running the actual game, 
+    /// to ensure that all works as intended
+    /// </summary>
     class Testing : IOutable
     {
         protected Player Player1;
@@ -25,6 +30,10 @@ namespace Dungeon_Explorer_2
 
         protected GameMap Levels = new GameMap();
 
+
+        /// <summary>
+        /// This is the constructor for the Testing class
+        /// </summary>
         public Testing()
         {
 
@@ -44,6 +53,10 @@ namespace Dungeon_Explorer_2
                 OutputText(e.Message);
             }
         }
+
+        /// <summary>
+        /// This is the Run function for the Testing class, 
+        /// </summary>
         public void Run()
         {
             DisplayDetails(Player1);
@@ -78,6 +91,11 @@ namespace Dungeon_Explorer_2
             Player1.Equip();
 
         }
+        /// <summary>
+        /// Displays the details of the creature input
+        /// </summary>
+        /// <param name="Creature">The Creature we want the details of.</param>
+        /// <returns>The details of the creature given</returns>
         void DisplayDetails(Creature Creature)
         {
             OutputText($"\nEntity details are below:");
@@ -86,10 +104,24 @@ namespace Dungeon_Explorer_2
             DisplayDamage(Creature);
             OutputText("");
         }
+        /// <summary>
+        /// Displays the Name of the creature input
+        /// </summary>
+        /// <param name="Creature">The Creature we want the name of.,</param>
+        /// <param name="Creature.Name">The Creatures name.,</param>
+        /// <returns>The Name of the creature given</returns>
         void DisplayName(Creature Creature)
         {
             OutputText($"Name:{Creature.Name}");
         }
+
+        /// <summary>
+        /// Displays the Health of the creature input
+        /// </summary>
+        /// <param name="Creature">The Creature we want the details of.,</param>
+        /// <param name="Creature.Name">The Creatures damage.,</param>
+        /// <param name="Creature.Health">The Creatures damage.,</param>
+        /// <returns>The Health of the creature given</returns>
         void DisplayHealth(Creature Creature)
         {
             if (Creature.Health == 0)
@@ -101,19 +133,33 @@ namespace Dungeon_Explorer_2
                 OutputText($"Health:{Creature.Health}");
             }
         }
+        /// <summary>
+        /// Displays the Damage of the creature input
+        /// </summary>
+        /// <param name="Creature">The Creature we want the details of.,</param>
+        /// <param name="Creature.Damage">The Creatures damage.,</param>
+        /// <returns>The Damage of the creature given</returns>
         void DisplayDamage(Creature Creature)
         {
             OutputText($"Damage:{Creature.Damage}");
         }
 
+        /// <summary>
+        /// Uses the function from interface IOutable
+        /// Outputs text given to it
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <returns>The Output Message, character by character with a sleep 0f 30</returns>
+        /// <seealso cref="IOutable.OutputText(string)"/>
         public virtual void OutputText(string Message)
         {
             for (int x = 0; x < Message.Length; x++)
             {
                 Console.Write(Message[x]);
-                Thread.Sleep(0);
+                Thread.Sleep(30);
             }
             Console.Write("\n");
         }
+
     }
 }
