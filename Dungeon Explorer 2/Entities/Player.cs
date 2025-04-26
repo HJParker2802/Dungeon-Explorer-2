@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+    /// <summary>
+    /// This is the Player class, it inherits from Creature and ICollectable
+    /// </summary>
     class Player : Creature, ICollectable
     {
         private List<Items> Inventory = new List<Items> { };
