@@ -57,6 +57,7 @@
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Collectables\Potions.cs" />
     <Compile Include="Program\Program.cs" />
+    <Compile Include="Program\RandomNumber.cs" />
     <Compile Include="Program\Statistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Map\Room.cs" />

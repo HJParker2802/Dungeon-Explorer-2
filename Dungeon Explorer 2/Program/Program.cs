@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
-    class Program:IOutable
+    class Program
     {
         /// <summary>
         /// The main function of Program
@@ -17,6 +17,7 @@ namespace Dungeon_Explorer_2
         /// <returns>string[] args</returns>
         static void Main(string[] args)
         {
+
             Console.WriteLine("Do you want to test or play?");
             if (Console.ReadLine().ToUpper().Contains("T"))
             {
@@ -41,24 +42,6 @@ namespace Dungeon_Explorer_2
             Console.WriteLine("Program has ended");
             Console.WriteLine("Press any key to exit....");
             Console.ReadKey();
-        }
-
-
-        /// <summary>
-        /// Uses the function from interface IOutable
-        /// Outputs text given to it
-        /// </summary>
-        /// <param name="Message"></param>
-        /// <returns>The Output Message, character by character with a sleep 0f 30</returns>
-        /// <seealso cref="IOutable.OutputText(string)"/>
-        public virtual void OutputText(string Message)
-        {
-            for (int x = 0; x < Message.Length; x++)
-            {
-                Console.Write(Message[x]);
-                Thread.Sleep(10);
-            }
-            Console.Write("\n");
         }
     }
 }
