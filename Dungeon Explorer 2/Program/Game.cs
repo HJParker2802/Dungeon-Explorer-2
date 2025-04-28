@@ -23,12 +23,7 @@ namespace Dungeon_Explorer_2
         protected Creature HugeOgre;
         protected Creature RegSpider;
 
-        protected Items CurrentWeapon;
-        protected Items RustyDagger;
-        protected Items String;
-        protected Items EnchantedLongSword;
-        protected Items Torch;
-        protected Items HealthPotion;
+
 
         protected GameMap LevelSystem;
 
@@ -64,7 +59,6 @@ namespace Dungeon_Explorer_2
                 ThePlayer = new Player(Temp_Name, StartHealth, -1); //Damage set as -1 so that it goes to default value
                 LevelSystem = new GameMap();
                 CreateEnemies();
-                CreateItems();
                 
                 OutputText("");
 
@@ -88,9 +82,12 @@ namespace Dungeon_Explorer_2
                 int OptionsAnswer;
                 bool TrapSolved = false;
                 LevelSystem.MakeRooms();
-                List<Items> Room1Collectables = new List<Items>() {String, RustyDagger };
-                List<Items> Room2Collectables = new List<Items>() {Torch };
-                List<Items> Room5Collectables = new List<Items>() {EnchantedLongSword, HealthPotion};
+                //List<Items> Room1Collectables = new List<Items>() {String, RustyDagger };
+                //List<Items> Room2Collectables = new List<Items>() {Torch };
+                //List<Items> Room5Collectables = new List<Items>() {EnchantedLongSword, HealthPotion};
+
+
+
 
                 while (playing)
                 {
@@ -161,7 +158,7 @@ namespace Dungeon_Explorer_2
                                 if (OptionsAnswer == 1) { OutputText("There is no monster to fight"); }
                                 else if (OptionsAnswer == 2) 
                                 {
-                                    if (Room1Collectables.Count == 0)
+                                    if (LevelSystem.Room1.Collectables.Count == 0)
                                     {
                                         OutputText("You go back over the the chest");
                                         OutputText("The chest is empty");
@@ -169,11 +166,11 @@ namespace Dungeon_Explorer_2
                                     else
                                     {
                                         OutputText("You approach the rusted chest in the corner\nYou open the chest and take the items it contained, adding them to your inventory");
-                                        for (int x = 0; x < Room1Collectables.Count; x++)
+                                        for (int x = 0; x < LevelSystem.Room1.Collectables.Count; x++)
                                         {
-                                            ThePlayer.Collect(Room1Collectables[x]);
+                                            ThePlayer.Collect(LevelSystem.Room1.Collectables[x]);
                                         }
-                                        Room1Collectables.Clear();
+                                        LevelSystem.Room1.Collectables.Clear();
                                         ThePlayer.ItemDetails();
                                     }
                                 }
@@ -194,18 +191,18 @@ namespace Dungeon_Explorer_2
                                 if (OptionsAnswer == 1) { OutputText("There is no monster to fight"); }
                                 else if (OptionsAnswer == 2)
                                 {
-                                    if (Room2Collectables.Count == 0)
+                                    if (LevelSystem.Room2.Collectables.Count == 0)
                                     {
                                         OutputText("You have already placed the torch in your inventory");
                                     }
                                     else
                                     {
                                         OutputText("You take the torch off the wall and place it into your inventory");
-                                        for (int x = 0; x < Room2Collectables.Count; x++)
+                                        for (int x = 0; x < LevelSystem.Room2.Collectables.Count; x++)
                                         {
-                                            ThePlayer.Collect(Room2Collectables[x]);
+                                            ThePlayer.Collect(LevelSystem.Room2.Collectables[x]);
                                         }
-                                        Room2Collectables.Clear();
+                                        LevelSystem.Room2.Collectables.Clear();
                                         ThePlayer.ItemDetails();
                                         LevelSystem.Room2.ChangeDescription("You are in a very dark corriodor with no torch on the wall");
                                         LevelSystem.CurrentRoom = LevelSystem.Room2;
@@ -324,7 +321,7 @@ namespace Dungeon_Explorer_2
                                     OutputText("Do you want to investigate the chest?(Yes or No)");
                                     if(Console.ReadLine().ToUpper().Contains("Y"))
                                     {
-                                        if (Room5Collectables.Count == 0)
+                                        if (LevelSystem.Room5.Collectables.Count == 0)
                                         {
                                             OutputText("You go back over the the chest");
                                             OutputText("The chest is empty");
@@ -332,11 +329,11 @@ namespace Dungeon_Explorer_2
                                         else
                                         {
                                             OutputText("You open the glass chest and see a shining longsword and a glowing health potion");
-                                            for (int x = 0; x < Room5Collectables.Count; x++)
+                                            for (int x = 0; x < LevelSystem.Room5.Collectables.Count; x++)
                                             {
-                                                ThePlayer.Collect(Room5Collectables[x]);
+                                                ThePlayer.Collect(LevelSystem.Room5.Collectables[x]);
                                             }
-                                            Room5Collectables.Clear();
+                                            LevelSystem.Room5.Collectables.Clear();
                                             ThePlayer.ItemDetails();
                                         }
                                     }
@@ -583,14 +580,7 @@ namespace Dungeon_Explorer_2
         /// <summary>
         /// Creates the Items with names, descriptions and attack damage
         /// </summary>
-        public void CreateItems()
-        {
-            RustyDagger = new Weapons("Rusty Dagger", 25, "A rusty dagger, barely better than using a fist, barely....");
-            String = new Items("Piece of String", 0, "A piece of string, it is completely useless");
-            EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
-            Torch = new Weapons("A torch", 0, "Just a torch from the wall");
-            HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
-        }
+
 
         /// <summary>
         /// Uses the function from interface IOutable

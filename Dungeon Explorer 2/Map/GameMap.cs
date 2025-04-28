@@ -25,6 +25,16 @@ namespace Dungeon_Explorer_2
         public Room Room7;
         public Room Room8;
 
+        protected Items CurrentWeapon;
+        protected Items RustyDagger;
+        protected Items String;
+        protected Items EnchantedLongSword;
+        protected Items Torch;
+        protected Items HealthPotion;
+
+
+
+
         /// <summary>
         /// This functions declare all the rooms with their set descriptions
         /// </summary>
@@ -41,8 +51,23 @@ namespace Dungeon_Explorer_2
             Room8 = new Room("You are in a room with a bed, it is time to rest and accept victory!");
             CurrentRoom = Room1;
             OutputText(Description = CurrentRoom.GetDescription());
+
+            CreateItems();
+
+            Room1.Collectables = new List<Items>() { String, RustyDagger };
+            Room2.Collectables = new List<Items>() { Torch };
+            Room5.Collectables = new List<Items>() { EnchantedLongSword, HealthPotion };
         }
-        
+
+        public void CreateItems()
+        {
+            RustyDagger = new Weapons("Rusty Dagger", 25, "A rusty dagger, barely better than using a fist, barely....");
+            String = new Items("Piece of String", 0, "A piece of string, it is completely useless");
+            EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
+            Torch = new Weapons("A torch", 0, "Just a torch from the wall");
+            HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
+        }
+
         /// <summary>
         /// This returns the description for the current room 
         /// </summary>

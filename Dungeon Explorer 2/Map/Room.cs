@@ -17,6 +17,11 @@ namespace Dungeon_Explorer_2
         private string description;
 
         /// <summary>
+        /// Collectables for all rooms
+        /// </summary>
+        public List<Items> Collectables;
+        
+        /// <summary>
         /// Constructor for the Room class
         /// </summary>
         /// <param name="description"> declares the description in the constructor</param>
