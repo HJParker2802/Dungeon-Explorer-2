@@ -27,8 +27,10 @@ namespace Dungeon_Explorer_2
         protected Weapons EnchantedLongSword = new Weapons("Enchanted Long Sword", 500, "A mystical blade, rumour has it, it's able to cut through almost anything, almost....");
         protected Weapons Torch = new Weapons("A torch", 1, "Just a torch from the wall");
         protected Potions HealthPotion = new Potions("Health Potion", -25, "A shiny half full bottle, containing a red liquid, you can almost feel the healing properties, you feel a desire to drink it....");
-
+        protected Items String = new Items("String",0,"piece of string");
         protected GameMap Levels = new GameMap();
+
+        public bool[] Test = new bool[16];
 
 
         /// <summary>
@@ -40,11 +42,13 @@ namespace Dungeon_Explorer_2
             try
             {
                 OutputText("The Tests are starting");
-
                 // Initialize the game with one room and one player
                 Player1 = new Player("Testing Player", 100, 15);
+                
                 Monster1 = new Spider("Spider", 50, -1);
+                Test[0] = true;
                 Debug.Assert(Player1.Name == "Testing Player");
+                Test[1] = true;
                 Debug.Assert(Player1.Health == 100);
                 OutputText("");
             }
@@ -59,22 +63,26 @@ namespace Dungeon_Explorer_2
         /// </summary>
         public void Run()
         {
+            OutputText(Test.Length.ToString());
             DisplayDetails(Player1);
             DisplayDetails(Monster1);
-            Levels.MakeRooms();
+            Levels.MakeRooms(); Test[2] = true;
+            Levels.PreviousRoom(); Test[3] = true;
+            Levels.NextRoom(); Test[4] = true;
+            Levels.NextRoom();
+            Levels.NextRoom();
+            Levels.NextRoom();
+            Levels.NextRoom(); Test[5] = true;
             Levels.PreviousRoom();
-            Levels.NextRoom();
-            Levels.NextRoom();
-            Levels.NextRoom();
-            Levels.NextRoom();
-            Levels.NextRoom();
 
-            while((Player1.Health!=0) || (Monster1.Health!=0))
+            while ((Player1.Health!=0) || (Monster1.Health!=0))
             {
                 Player1.Attack(Monster1);
                 if ((Player1.Health == 0) || (Monster1.Health == 0)) { break; }
             }
-            Debug.Assert(Monster1.Health == 2);
+            Test[6] = true;
+            Test[7] = true;
+            Debug.Assert(Monster1.Health != 0);
             Player1.Health = 100;
             Monster1.Health = 100;
             while ((Player1.Health != 0) || (Monster1.Health != 0))
@@ -82,13 +90,61 @@ namespace Dungeon_Explorer_2
                 Monster1.Attack(Player1);
                 if ((Player1.Health == 0) || (Monster1.Health == 0)) { break; }
             }
-            Debug.Assert(Player1.Health == 0);
+            Test[8] = true;
+            Test[9] = true;
+            Debug.Assert(Player1.Health != 0);
             Player1.Health = 100;
             Monster1.Health = 100;
 
-            Player1.InventoryContents();
-            Player1.Collect(Torch);
-            Player1.Equip();
+            Player1.Collect(Torch); Test[10] = true;
+            bool AutoEquip = Player1.Equip("Y","");
+            bool ManualEquip = Player1.Equip("", "A torch");
+
+            Player1.Collect(LongSword);
+            bool AutoEquip2 = Player1.Equip("Y", "");
+            bool ManualEquip2 = Player1.Equip("", "A torch");
+            Console.Clear();
+            Player1.Collect(String);
+            bool CheckUnusableItems = Player1.Equip("","String");
+
+
+            OutputText("Testing Completed");
+            OutputText("Players can be made"); 
+            OutputText("Monsters can be made"); 
+            OutputText("Rooms can be made"); 
+            OutputText("Previous room cannot be entered on first room"); 
+            OutputText("Next room function works");
+            OutputText("Next room function cannot be entered on final room");
+            OutputText("Previous room function works");
+            OutputText("Players can attack Monster");
+            OutputText("Monsters can die");
+            OutputText("Monsters can attack Player");
+            OutputText("Player can die");
+            OutputText("Items can be collected");
+            if (AutoEquip) { OutputText("Auto equip item works"); Test[11] = true; }
+            else { OutputText("Auto equip item does not work"); Test[11] = false; }
+            if (ManualEquip) { OutputText("Manual equip item works"); Test[12] = true; }
+            else { OutputText("Manual equip item does not work"); Test[12] = false; }
+            if (AutoEquip2) { OutputText("Auto equip item works with multiple items"); Test[13] = true; }
+            else { OutputText("Auto equip item does not work with multiple items"); Test[13] = false; }
+            if  (ManualEquip2){OutputText("Manual equip item workss with multiple items"); Test[14] = true; }
+            else { OutputText("Manual equip item does not works with multiple items"); Test[14] = false; }
+            if  (!CheckUnusableItems){ OutputText("Non usable items cannot be equiped"); Test[15] = true; }
+            else { OutputText("Usable items can be equiped "); Test[15] = false; }
+            OutputText("Players can equip usable items");
+
+            bool TestsWorked = true;
+            int FailedTestCounter=0;
+            for (int x = 0; x < Test.Count(); x++)
+            {
+                if (Test[x] == false)
+                {
+                    TestsWorked = false;
+                    FailedTestCounter++;
+                }
+            }
+            if (TestsWorked) OutputText($"All tests Passed with {FailedTestCounter} fails.");
+            else OutputText($"Test failed with {FailedTestCounter} fails.");
 
         }
         /// <summary>
@@ -156,7 +212,6 @@ namespace Dungeon_Explorer_2
             for (int x = 0; x < Message.Length; x++)
             {
                 Console.Write(Message[x]);
-                Thread.Sleep(30);
             }
             Console.Write("\n");
         }

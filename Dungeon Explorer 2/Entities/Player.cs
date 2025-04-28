@@ -99,6 +99,52 @@ namespace Dungeon_Explorer_2
         }
 
         /// <summary>
+        /// Equip function with choices predefined choices, without inputs
+        /// This is used for the Testing class to check if items are equippable.
+        /// </summary>
+        /// <param name="ChoiceInput"></param>
+        /// <param name="ItemInput"></param>
+        /// <returns></returns>
+        public bool Equip(string ChoiceInput, String ItemInput)
+        {
+            if (Inventory.Count == 0)
+            {
+                OutputText("There are no items in inventory");
+                return false;
+            }
+            else
+            {
+                if (ChoiceInput.ToUpper().Contains("Y"))
+                {
+                    Items StrongestItem = Inventory.OrderByDescending(i => i.HealthImpact).FirstOrDefault();
+
+                    if (StrongestItem != null && StrongestItem is IUsable UsableItem)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    Items Item = Inventory.FirstOrDefault(i => i.ItemName.Equals(ItemInput, StringComparison.OrdinalIgnoreCase));
+
+                    if (Item != null && Item is IUsable UsableItem)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
         /// ALlows Player to collect Items 
         /// </summary>
         /// <param name="Item"></param>
