@@ -1,0 +1,21 @@
+The tests are starting 
+Players can be made
+Monsters can be made
+Rooms can be made
+Previous room cannot be entered on first room
+Next room function works
+Next room function cannot be entered on final room
+Previous room function works
+Players can attack Monster
+Monsters can die
+Monsters can attack Player
+Player can die
+Items can be collected
+Auto equip items works
+Manual equip item works
+Auto equip item works with multiple items
+Manual equip item workss with multiple items
+Non usable items cannot be equiped
+Players can equip usable items
+Testing Completed
+All tests Passed with 0 fails

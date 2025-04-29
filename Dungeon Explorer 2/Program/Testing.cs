@@ -3,6 +3,7 @@ using Dungeon_Explorer_2.Entities.EnemyTypes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,6 +19,10 @@ namespace Dungeon_Explorer_2
     /// </summary>
     class Testing : IOutable
     {
+        private static readonly string LogFilePath = "TestingLogFile.txt";
+
+
+
         protected Player Player1;
         protected Monster Monster1;
 
@@ -43,6 +48,7 @@ namespace Dungeon_Explorer_2
             try
             {
                 OutputText("The Tests are starting");
+                File.WriteAllText(LogFilePath, "The tests are starting \n");
                 // Initialize the game with one room and one player
                 Player1 = new Player("Testing Player", 100, 15);
                 
@@ -83,7 +89,7 @@ namespace Dungeon_Explorer_2
             }
             Test[6] = true;
             Test[7] = true;
-            Debug.Assert(Monster1.Health != 0);
+            Debug.Assert(Monster1.Health == 0);
             Player1.Health = 100;
             Monster1.Health = 100;
             while ((Player1.Health != 0) || (Monster1.Health != 0))
@@ -93,7 +99,7 @@ namespace Dungeon_Explorer_2
             }
             Test[8] = true;
             Test[9] = true;
-            Debug.Assert(Player1.Health != 0);
+            Debug.Assert(Player1.Health == 0);
             Player1.Health = 100;
             Monster1.Health = 100;
 
@@ -109,30 +115,43 @@ namespace Dungeon_Explorer_2
             bool CheckUnusableItems = Player1.Equip("","String");
 
 
-            OutputText("Testing Completed");
-            OutputText("Players can be made"); 
-            OutputText("Monsters can be made"); 
+
+            OutputText("Players can be made");
+            File.AppendAllText(LogFilePath, "Players can be made\n");
+            OutputText("Monsters can be made");
+            File.AppendAllText(LogFilePath, "Monsters can be made\n");
             OutputText("Rooms can be made"); 
+            File.AppendAllText(LogFilePath, "Rooms can be made\n");
             OutputText("Previous room cannot be entered on first room"); 
+            File.AppendAllText(LogFilePath, "Previous room cannot be entered on first room\n");
             OutputText("Next room function works");
+            File.AppendAllText(LogFilePath, "Next room function works\n");
             OutputText("Next room function cannot be entered on final room");
+            File.AppendAllText(LogFilePath, "Next room function cannot be entered on final room\n");
             OutputText("Previous room function works");
+            File.AppendAllText(LogFilePath, "Previous room function works\n");
             OutputText("Players can attack Monster");
+            File.AppendAllText(LogFilePath, "Players can attack Monster\n");
             OutputText("Monsters can die");
+            File.AppendAllText(LogFilePath, "Monsters can die\n");
             OutputText("Monsters can attack Player");
+            File.AppendAllText(LogFilePath, "Monsters can attack Player\n");
             OutputText("Player can die");
+            File.AppendAllText(LogFilePath, "Player can die\n");
             OutputText("Items can be collected");
-            if (AutoEquip) { OutputText("Auto equip item works"); Test[11] = true; }
-            else { OutputText("Auto equip item does not work"); Test[11] = false; }
-            if (ManualEquip) { OutputText("Manual equip item works"); Test[12] = true; }
-            else { OutputText("Manual equip item does not work"); Test[12] = false; }
-            if (AutoEquip2) { OutputText("Auto equip item works with multiple items"); Test[13] = true; }
-            else { OutputText("Auto equip item does not work with multiple items"); Test[13] = false; }
-            if  (ManualEquip2){OutputText("Manual equip item workss with multiple items"); Test[14] = true; }
-            else { OutputText("Manual equip item does not works with multiple items"); Test[14] = false; }
-            if  (!CheckUnusableItems){ OutputText("Non usable items cannot be equiped"); Test[15] = true; }
-            else { OutputText("Usable items can be equiped "); Test[15] = false; }
+            File.AppendAllText(LogFilePath, "Items can be collected\n");
+            if (AutoEquip) { OutputText("Auto equip item works"); Test[11] = true; File.AppendAllText(LogFilePath, "Auto equip items works\n"); }
+            else { OutputText("Auto equip item does not work"); Test[11] = false; File.AppendAllText(LogFilePath, "Auto equip item does not work\n"); }
+            if (ManualEquip) { OutputText("Manual equip item works"); Test[12] = true; File.AppendAllText(LogFilePath, "Manual equip item works\n"); }
+            else { OutputText("Manual equip item does not work"); Test[12] = false; File.AppendAllText(LogFilePath, "Manual equip item does not work\n"); }
+            if (AutoEquip2) { OutputText("Auto equip item works with multiple items"); Test[13] = true; File.AppendAllText(LogFilePath, "Auto equip item works with multiple items\n"); }
+            else { OutputText("Auto equip item does not work with multiple items"); Test[13] = false; File.AppendAllText(LogFilePath, "Auto equip item does not work with multiple items\n"); }
+            if  (ManualEquip2){OutputText("Manual equip item workss with multiple items"); Test[14] = true; File.AppendAllText(LogFilePath, "Manual equip item workss with multiple items\n"); }
+            else { OutputText("Manual equip item does not works with multiple items"); Test[14] = false; File.AppendAllText(LogFilePath, "Manual equip item does not works with multiple items\n"); }
+            if  (!CheckUnusableItems){ OutputText("Non usable items cannot be equiped"); Test[15] = true; File.AppendAllText(LogFilePath, "Non usable items cannot be equiped\n"); }
+            else { OutputText("Usable items can be equiped "); Test[15] = false; File.AppendAllText(LogFilePath, "Usable items can be equiped \n"); }
             OutputText("Players can equip usable items");
+            File.AppendAllText(LogFilePath, "Players can equip usable items\n");
 
             bool TestsWorked = true;
             int FailedTestCounter=0;
@@ -144,9 +163,20 @@ namespace Dungeon_Explorer_2
                     FailedTestCounter++;
                 }
             }
-            if (TestsWorked) OutputText($"All tests Passed with {FailedTestCounter} fails.");
-            else OutputText($"Test failed with {FailedTestCounter} fails.");
+            OutputText("Testing Completed");
+            File.AppendAllText(LogFilePath, "Testing Completed\n");
 
+            if (TestsWorked)
+            {
+                OutputText($"All tests Passed with {FailedTestCounter} fails.");
+                File.AppendAllText(LogFilePath, $"All tests Passed with {FailedTestCounter} fails\n");
+
+            }
+            else
+            {
+                OutputText($"Test failed with {FailedTestCounter} fails.");
+                File.AppendAllText(LogFilePath, $"Test failed with {FailedTestCounter} fails.\n");
+            }
         }
         /// <summary>
         /// Displays the details of the creature input
