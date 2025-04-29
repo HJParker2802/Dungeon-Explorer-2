@@ -9,6 +9,8 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// This is the creatures classs, it inherits from IOutable and IDamageable 
+    /// IOutable interface is used to ensure that all Creatures can output in their own controlled way
+    /// IDamageable interface is used to ensure that all creatures can have controlled damage functions
     /// </summary>
     abstract class Creature : IOutable, IDamageable
     {

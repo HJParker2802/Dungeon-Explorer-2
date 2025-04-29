@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2.Entities
 {
+    /// <summary>
+    /// This is the boss class, it inherits from Monster
+    /// Boss class inherits from Monster as it is a different, more specific type of enemy that has its own Attack function that is unique to it
+    /// </summary>
     class Boss : Monster
     {
 

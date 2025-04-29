@@ -10,6 +10,7 @@ namespace Dungeon_Explorer_2
     /// <summary>
     /// This is the IOutable interface,
     /// it is used to OutputText across all the program
+    /// This is an interface to ensure it can be used on any class in the exact way the class needs it
     /// </summary>
     interface IOutable
     {

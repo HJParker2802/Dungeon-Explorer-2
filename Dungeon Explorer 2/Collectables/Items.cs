@@ -10,6 +10,7 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// Items class, inherits from IOutable
+    /// Interface IOutable is used to ensure that all Items can have a controlled output method specific to the items
     /// </summary>
     class Items: IOutable
     {

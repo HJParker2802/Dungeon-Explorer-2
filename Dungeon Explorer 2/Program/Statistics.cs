@@ -11,6 +11,7 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// Statistics class, inherits from IOutable
+    /// IOutable interface is used to ensure that all outputs can be controlled through their own class
     /// </summary>
     public class Statistics: IOutable
     {

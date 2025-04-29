@@ -9,6 +9,8 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// Weapons class, inherits from Items, IUsable
+    /// Items is inherited from as it is a blueprint for how Weapons are structured as weapons are items
+    /// IUsable is inherited from to ensure that all weapons will be usable by the player
     /// </summary>
     class Weapons : Items, IUsable
     {

@@ -14,6 +14,7 @@ namespace Dungeon_Explorer_2
     /// Testing class, inherits from IOutable,
     /// This is made to test out features of the game before running the actual game, 
     /// to ensure that all works as intended
+    /// IOutable interface is used to ensure that the way outputs are done in the console can be controlled per class.
     /// </summary>
     class Testing : IOutable
     {

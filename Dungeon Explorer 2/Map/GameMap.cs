@@ -9,6 +9,7 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// This is the Gamemap class, it inherits from IOutable
+    /// IOutable interface is used to ensure that all outputs can be controlled through their own class
     /// </summary>
     class GameMap : IOutable
     {

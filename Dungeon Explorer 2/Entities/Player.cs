@@ -11,6 +11,8 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// This is the Player class, it inherits from Creature and ICollectable
+    /// Player inherits from Creature class as the Creature class is used as a blueprint for the player class
+    /// Player uses ICollectable interface to ensure that the interface can be used exactly as necessary regardless of which class it is used in
     /// </summary>
     class Player : Creature, ICollectable
     {

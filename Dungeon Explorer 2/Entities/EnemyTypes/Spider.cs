@@ -8,6 +8,10 @@ using System.Xml.Linq;
 
 namespace Dungeon_Explorer_2.Entities.EnemyTypes
 {
+    /// <summary>
+    /// This is the spider class, it inherits from Monster
+    /// Spider class inherits from Monster as it is a different, more specific type of enemy that has its own Attack function that is unique to it
+    /// </summary>
     class Spider : Monster
     {
 

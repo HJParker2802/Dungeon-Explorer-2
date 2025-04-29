@@ -9,7 +9,10 @@ namespace Dungeon_Explorer_2
 {
     /// <summary>
     /// Potions class, inherits from Items and IUsable
+    /// Items is inherited from as it is a blueprint for how Potions are structured as weapons are items
+    /// IUsable is inherited from to ensure that all Potions will be usable by the player
     /// </summary>
+
     class Potions : Items, IUsable
     {
         public Potions(string itemName, int healthImpact, string description) : base(itemName, healthImpact, description){}

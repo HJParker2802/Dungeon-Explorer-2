@@ -13,6 +13,11 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Explorer_2
 {
+
+    /// <summary>
+    /// Game class, used to run the game
+    /// Uses IOutable interface to control how data is output onto the console
+    /// </summary>
     class Game : IOutable
     {
         protected Player ThePlayer;
